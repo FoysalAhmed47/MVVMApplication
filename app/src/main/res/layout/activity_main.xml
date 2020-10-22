@@ -7,41 +7,15 @@
     android:gravity="center"
     tools:context=".view.MainActivity">
 
-   <EditText
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/editText1"
-       android:layout_marginStart="8dp"
-       android:layout_marginEnd="8dp"
-       android:ems="10"
-       android:inputType="textPersonName"
-       android:hint="EnterNumber"
-       />
-
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_below="@id/editText1"
-        android:layout_marginStart="8dp"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_Id"
+        android:layout_width="395dp"
+        android:layout_height="715dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="EnterNumber"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:text="BUTTON"
-        android:layout_marginTop="5dp"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:layout_below="@id/editText2"
-        android:layout_marginLeft="140dp"
-        />
-
 </RelativeLayout>

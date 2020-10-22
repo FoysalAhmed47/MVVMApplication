@@ -1,22 +1,25 @@
 package com.example.mvvmapplication.viewmodel;
 
+import android.app.Application;
+import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
+import android.support.annotation.NonNull;
 
-public class MainActivityViewModel extends ViewModel {
+import com.example.mvvmapplication.model.User;
+import com.example.mvvmapplication.model.UserRepository;
 
-    MutableLiveData<String> resultLiveData;
+public class MainActivityViewModel extends AndroidViewModel {
 
-public MutableLiveData<String> additionFunction(String value1,String value2)
-{
-    int num1=Integer.parseInt(value1);
-    int num2=Integer.parseInt(value2);
-    int result=num1+num2;
+UserRepository userRepository;
 
-    if (resultLiveData==null){
-        resultLiveData=new MutableLiveData<>();
+    public MainActivityViewModel(@NonNull Application application) {
+        super(application);
+        userRepository=new UserRepository(application);
     }
-    resultLiveData.setValue(String.valueOf(result));
-    return resultLiveData;
-}
+    public LiveData<User[]> getAllUserData()
+    {
+        return userRepository.getUserData();
+    }
 }
